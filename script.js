@@ -1,28 +1,31 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
   let length = prompt("How long would you like your password to be (must be between 8-128 cahracters)")
-  if(length>128 || length<8) {
-  alert("Please enter between 8 and 128")
-  return;}
+  if (length > 128 || length < 8) {
+    alert("Please enter between 8 and 128")
+    return;
+  }
   let lowercase = prompt('Would you like lowercase letters? (yes or no)')
-  if(lowercase != "yes" && lowercase != "no") {
-  alert("Please enter yes or no")
-  return;}
+  if (lowercase != "yes" && lowercase != "no") {
+    alert("Please enter yes or no")
+    return;
+  }
   let uppercase = prompt('Would you like uppercase letters? (yes or no)')
-  if(uppercase != "yes" && uppercase != "no") {
+  if (uppercase != "yes" && uppercase != "no") {
     alert("Please enter yes or no")
-    return;}
+    return;
+  }
   let numeric = prompt('Would you like numbers? (yes or no)')
-  if(numeric != "yes" && numeric != "no") {
+  if (numeric != "yes" && numeric != "no") {
     alert("Please enter yes or no")
-    return;}
+    return;
+  }
   let specialCharacter = prompt('Would you like special characters? (yes or no)')
-  if(specialCharacter != "yes" && specialCharacter != "no") {
+  if (specialCharacter != "yes" && specialCharacter != "no") {
     alert("Please enter yes or no")
-    return;}
+    return;
+  }
 
   function generatePassword() {
     let newPassword = ""
@@ -32,26 +35,26 @@ function writePassword() {
     let special = '!@#$%&*'
     let str = ""
 
-    if(lowercase === "yes")
-    str += lower
+    if (lowercase === "yes")
+      str += lower
 
-    if(uppercase === "yes")
-    str += upper
+    if (uppercase === "yes")
+      str += upper
 
-    if(numeric === "yes")
-    str += number
+    if (numeric === "yes")
+      str += number
 
-    if(specialCharacter === "yes")
-    str += special
+    if (specialCharacter === "yes")
+      str += special
 
-    
+
 
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random()
-          * str.length + 1);
+        * str.length + 1);
 
       newPassword += str.charAt(char)
-  }
+    }
     return newPassword
   }
 
@@ -64,5 +67,5 @@ function writePassword() {
   console.log(password.length)
 }
 
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
